@@ -1,4 +1,4 @@
-libname richard 'C:\Users\q.deng\Desktop\sas'; * create a library;
+libname richard 'C:\Users\richard\Desktop\sas'; * create a library;
 
 data richard.admit;
 input id name $ sex $ age date height weight actlevel $ fee;
@@ -10,9 +10,11 @@ datalines;
 2310 tonny M 67 51 91 93 MIDDLE  189.2
 ;
 run;
+proc print data =richard.admit;run;
 
 * PROC SORT;
-proc sort data=richard.admit out=ad; * create a new dataset, and will not change the original data set;
+ 	* create a new dataset, and will not change the original data set;
+proc sort data=richard.admit out=ad;
 by descending age descending date;
 run;
 proc print data=ad;
@@ -20,7 +22,8 @@ sum fee;
 run;
 
 * there is by option in proc print;
-proc sort data=richard.admit out=ad; * create a new dataset, and will not change the original data set;
+	* create a new dataset, and will not change the original data set;
+proc sort data=richard.admit out=ad; 
 by actlevel;
 run;
 title1 "customer records";

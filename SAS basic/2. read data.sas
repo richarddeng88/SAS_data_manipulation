@@ -1,8 +1,8 @@
-data rich.demo;
+data demo;
 input weight;
 sum_weight+weight;
 n+1;
-average=sum_weight/n;8
+average=sum_weight/n;
 datalines;
 1 
 2
@@ -17,8 +17,7 @@ datalines;
 ;
 run;
 
-proc print;
-run;
+proc print data=demo; run;
 
 *2.9;
 data park;
@@ -110,14 +109,14 @@ run;
 proc print data=testing;
 run;
 
-*2.16;
-proc import datafile='c:\users\richard\desktop\data.csv' out=musics4;
+*2.16 read a csv file to the disk; 
+proc import datafile='c:\users\richard\dropbox\cameras.csv' out=musics4;
 run;
 proc print data=musics4;
-title 'customers at each gig'
+title 'customers at each gig';
 run;
 
-*2.21;
+*2.21 add the lables into the sas data set;
 DATA funnies (LABEL = 'Comics Character Data');
 INPUT Id Name $ Height Weight DoB MMDDYY8. @@;
 LABEL Id = 'Identification no. '
