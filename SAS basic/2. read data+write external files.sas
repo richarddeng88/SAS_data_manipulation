@@ -19,6 +19,13 @@ run;
 
 proc print data=demo; run;
 
+*#########rename the variable; 
+data tem; 
+	set demo;
+	rename average=gradiant_average;
+run;
+proc print data=tem;run;
+
 *2.9;
 data park;
 input parkname $ 1-22 state $ year @40 acreage Comma9.;

@@ -1,5 +1,5 @@
-libname richard 'C:\Users\q.deng\Desktop\sas'; * Reference a SAS data library;
-filename vote 'C:\Users\q.deng\Desktop\sas\vote.dat'; * Reference an external file;
+libname richard 'C:\Users\richard\Desktop\sas'; * Reference a SAS data library;
+*filename vote 'C:\Users\q.deng\Desktop\sas\vote.dat'; * Reference an external file;
 
 data richard.vote; *Name a SAS data set;
 infile vote obs=3;      *Identify an external file;
