@@ -9,6 +9,7 @@ Benito, Gisela            32 F
 Rudelich, Herbert         39 M
 Sirignano, Emily          12 F
 Morrison, Michael         32 M
+wa haha                   99 F
 ;
 
 proc sort data=company;
@@ -25,6 +26,7 @@ data finance;
 228-88-9649 Benito, Gisela               28000
 029-46-9261 Rudelich, Herbert            35000
 442-21-8075 Sirignano, Emily             5000
+843-32-4843 guguga, keke                 900
 ;
 proc sort data=finance;
    by Name;
@@ -33,9 +35,6 @@ proc print data=company;
    title 'Little Theater Company Roster';
 run;
 
-proc print data=finance;
-   title 'Little Theater Employee Information';
-run;
 
 *To avoid having to maintain two separate data sets, we want to merge the records for each 
 player from both data sets into a new data set that contains all the variables. The variable 
@@ -52,9 +51,19 @@ proc print data=employee_info;
 run;
 
 
+* ####### Merging only the Matches #########
 
-
-
+	To avoid the missing values in the result we can consider keeping only the observations with matched 
+values for the common variable. That is achieved by using the IN statement. The merge statement of the SAS 
+program needs to be changed.;
+data test;
+   merge company(in=a) finance(in=b);
+   by name;
+   if a=0 and b=0;
+run;
+title 'test';
+proc print data=test;run;
+title;
 
 
 
