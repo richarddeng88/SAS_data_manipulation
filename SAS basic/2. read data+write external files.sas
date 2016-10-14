@@ -16,8 +16,8 @@ datalines;
 10
 ;
 run;
-
 proc print data=demo; run;
+
 
 *#########rename the variable; 
 data tem; 
