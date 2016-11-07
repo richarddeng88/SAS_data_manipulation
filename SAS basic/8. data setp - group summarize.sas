@@ -26,6 +26,7 @@ data sum;
 run;
 
 * @################### accumulating for groups ####################;
+*>>>>>>>>>>>>>>>>>>>>>>>>>.group by???? 
 
 	* the BY statement in the DATA step enables you to process your data in groups. 
 	a BY statement in data step creates temporary variables for each variable listed 

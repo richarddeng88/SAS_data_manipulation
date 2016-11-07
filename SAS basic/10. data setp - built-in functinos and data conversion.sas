@@ -1,8 +1,7 @@
 * ############# understand that there are functions for char, numeric and date type#########;
 
 	* A sas function is a routine that performs a computation or system manipulation and returns a value. 
-	* the RIGHT function returns its argument right-aligned. Trailing blanks are moved to the
-start of the value. ;
+	* the RIGHT function returns its argument right-aligned. Trailing blanks are moved to the start of the value. ;
 
 data flyers;
 	input id $ name $10. address $15.;
@@ -15,17 +14,16 @@ run;
 proc print data=flyers;var id;run;
 
 	* the SUBSTR function is used to extract or replace characters. 
->>> newvar = substr(string, start<, length>)
+		>>> newvar = substr(string, start<, length>)
 			
 	* the scan function returns the nth word of a character value. it is used to extract words
-from a character value when the relative order of words is known., but their starting positions 
+from a character value when the relative order of words is known. but their starting positions 
 are not. 
 		>> if n is negative, scan selects the word in the character string starting fromthe end of string.;
 		
-data test;
+data test;	set flyers;
 	drop name;
 	length gender $10.;
-	set flyers;
 	if substr(id,1,2)='M' then gender = 'Mr.';
 	else gender = 'Ms.';
 	first_name = scan(name,1,',');

@@ -25,12 +25,12 @@ run;
 
 
 * there is by option in proc print;
-	* create a new dataset, and will not change the original data set;
 proc sort data=richard.admit out=ad; 
 by actlevel;
 run;
 title1 "customer records";
 footnote "RD work";
+
 proc print data=ad;
 sum fee;
 by actlevel; * usually 'actlevel' is categorical, then it print out different level seperately;

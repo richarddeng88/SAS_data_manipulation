@@ -24,7 +24,6 @@ data forecast;
 	new_total = new_total*(1+increase);
 	output;
 run;
-
 proc print data=forecast;run;
 
 
@@ -58,8 +57,7 @@ data rotate;
 	amount = q4;
 	output;
 run;
-
-*proc print data=rotate;run;
+proc print data=rotate;run;
 
 data method;
 input id $ internet $ telphone $ angency $;
@@ -91,7 +89,6 @@ DATA buyhistory;
 		output;	
 	end;
 run;
-
 proc print data=buyhistory;run;
 
 * example 3 - creating multiple SAS data sets in a single data steps

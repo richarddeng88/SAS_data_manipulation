@@ -1,5 +1,20 @@
 libname richard 'C:\Users\richard\Desktop\sas'; * Reference a SAS data library;
-*filename vote 'C:\Users\q.deng\Desktop\sas\vote.dat'; * Reference an external file;
+filename card 'C:\Users\richard\Desktop\sas\card.dat'; * Reference an external file;
+
+*read a .dat file;
+data richard.card;
+infile card;
+input card_id disp_id type $ issued_date $ ;
+run;
+proc print data=richard.card (obs=10);run;
+
+*wriite a .dat file;
+data write;
+set card;
+file 'c:\users\richard\desktop\sas\card.dat';
+put card_id disp_id type $ issued_date $ ;
+run;
+
 
 data richard.vote; *Name a SAS data set;
 infile vote obs=3;      *Identify an external file;
@@ -29,7 +44,7 @@ run;
 * write data into raw file;
 data test;
 set richard.vote_1;
-file 'C:\Users\q.deng\Desktop\sas\vote_1.dat';
+file 'C:\Users\richard\Desktop\sas\vote_1.dat';
 put name $16. v1 v2 v3 v4 v5 v6;
 run;
 
