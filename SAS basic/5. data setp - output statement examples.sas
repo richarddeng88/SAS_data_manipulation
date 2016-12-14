@@ -28,8 +28,8 @@ proc print data=forecast;run;
 
 
 * output statement - example 2;
-* rotating or transposing , a SAS data set can be accomplished by suing explicit output
-statments in a data steop. when a dataset is rotated, the values of an observation in the 
+* rotating or transposing, a SAS data set can be accomplished by using explicit output
+statments in a data step. when a dataset is rotated, the values of an observation in the 
 input dataset become values of a variable in the output data set.;
 
 data prog2;
@@ -96,24 +96,24 @@ proc print data=buyhistory;run;
 data militry;
 input code $ type $ age;
 datalines;
-	SKF AIR_FORCE 23
-	DPG ARMY 43
-	HIF AIR_FORCE 23
-	NFE NAVAL 32
-	DAA ARMY 26
-	TUU ARMY 36
-	KAA NAVAL 29
-	WOO ARMY 31
-	NFE NAVAL 32
-	DAA ARMY 26
-	TUU ARMY 36
-	KAA NAVAL 29
-	WOO ARMY 31
-	DAA ARMY 26
-	TUU ARMY 36
-	KAA NAVAL 29
-	WOO ARMY 31
-	NFE NAVAL 32
+	SKF1 AIR_FORCE 23
+	DPG2 ARMY 43
+	HIF3 AIR_FORCE 23
+	NFE4 NAVAL 32
+	DAA5 ARMY 26
+	TUU6 AIR_FORCE 36
+	KAA7 NAVAL 29
+	WOO8 ARMY 31
+	NFE9 NAVAL 32
+	DAA10 AIR_FORCE 26
+	TUU11 ARMY 36
+	KAA12 NAVAL 29
+	WOO13 AIR_FORCE 31
+	DAA14 ARMY 26
+	TUU15 AIR_FORCE 36
+	KAA16 NAVAL 29
+	WOO17 ARMY 31
+	NFE18 NAVAL 32
 	;
 run;
 
@@ -121,7 +121,7 @@ run;
 	specified variables to the ouput data set. However, all variables are available for processing.;
 	* when using keep= data set option, only associated variables are written to output data set.; 
 data army navy airforce; 
-	drop type; 
+	*drop type; 
 	set militry;
 	if type='ARMY' then ouput army;
 	if type='AIR_FORCE' then output airforce;
