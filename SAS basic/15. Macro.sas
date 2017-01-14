@@ -24,9 +24,10 @@ datalines;
 3 Y
 ;
 run;
-proc print data=sasuser.all;run;
 
+proc print data=sasuser.all;run;
 %let crsnum=3;
+
 data revenue;
 set sasuser.all end=final;
 where course_number=&crsnum;
